@@ -1,13 +1,15 @@
 
 
 $breakpoints-up: (
+  "medium": "40em",
+  "desktop": "90rem",
   "mobile": "23.4375rem",
-  "desktop": "90rem"
 );
 
 $breakpoints-down: (
+  "medium": "39.9375em",
   "mobile": "23.375rem",
-  "desktop": "89.9375rem"
+  "desktop": "89.9375rem",
 );
 
 

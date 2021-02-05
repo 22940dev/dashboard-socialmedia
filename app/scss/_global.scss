@@ -3,5 +3,35 @@ html {
 }
 
 body {
+  background-color: $white;
   font-family: "Inter", sans-serif;
+
+  &.dark {
+    background-color: $veryDarkBlue;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 69.375rem;
+
+  @include breakpoint-down(mobile) {
+    padding: 2.5rem 1.5625rem;
+  }
+
+  @include breakpoint-up(mobile) {
+    padding: 3.4375rem;
+  }
+}
+
+.desktop-only {
+  @include breakpoint-down(desktop) {
+    display: none;
+  }
+}
+
+.mobile-only {
+  @include breakpoint-up(mobile) {
+    display: none;
+  }
 }
