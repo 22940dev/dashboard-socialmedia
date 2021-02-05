@@ -1,0 +1,24 @@
+
+
+$breakpoints-up: (
+  "mobile": "23.4375rem",
+  "desktop": "90rem"
+);
+
+$breakpoints-down: (
+  "mobile": "23.375rem",
+  "desktop": "89.9375rem"
+);
+
+
+@mixin breakpoint-up ($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down ($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
