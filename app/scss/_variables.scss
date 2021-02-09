@@ -32,3 +32,11 @@ $InstagramGradient2: hsl(329, 70%, 58%);
 // Primary Colors
 $limeGreen: hsl(163, 72%, 41%);
 $brightRed: hsl(356, 69%, 56%);
+
+
+$webs: (
+  "youtube": $Youtube,
+  "twitter": $Twitter,
+  "facebook": $Facebook,
+  "instagram": ($InstagramGradient1, $InstagramGradient2)
+);

@@ -11,6 +11,18 @@ body {
   }
 }
 
+%flex-jcc-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-jcsb-c {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .container {
   margin: 0 auto;
   max-width: 69.375rem;
