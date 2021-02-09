@@ -8,28 +8,56 @@
   }
 
   &__items {
-    display: grid;
-    gap: 25px;
-
-    grid-template-columns: repeat(1, 1fr);
-    
-    @include breakpoint-up(medium) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include breakpoint-up(desktop) {
-      grid-template-columns: repeat(4, 1fr);
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   &__gridItem {
+    padding: 10px;
+    min-width: 255px;
+    overflow: hidden;
     height: 13.4375rem;
-    background-color: red;
+    border-radius: 5px;
+    position: relative;
+    background-color: white;
 
+    $webs: (
+      "youtube": $Youtube,
+      "twitter": $Twitter,
+      "facebook": $Facebook,
+      "instagram": ($InstagramGradient1, $InstagramGradient2)
+    );
 
-    @include breakpoint-up(medium) {
-      max-width: 16.25rem;
+    @each $rede in map-keys($webs) {
+      $colourMap: map-get($webs, $rede);
+
+      &.#{$rede} .followers__topBorder {
+        @if length($colourMap) > 1 {
+          background-image: linear-gradient(
+            to right, $colourMap
+          );
+        } @else {
+          background-color: $colourMap;
+        }
+      }
     }
+
+
+    @include breakpoint-down(medium) {
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__topBorder {
+    width: 100%;
+    height: 4px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
   }
 
 }
