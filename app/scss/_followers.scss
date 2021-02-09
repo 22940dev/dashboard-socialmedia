@@ -1,10 +1,15 @@
 
 .followers {
   // background-color: rgba(255, 0, 0, .2);
-  transform: translateY(-3.4375rem);
+  transform: translateY(-4.6875rem);
 
   @include breakpoint-up(mobile) {
-    transform: translateY(-6.875rem);
+    transform: translateY(-110px);
+  }
+
+  @include breakpoint-up(medium) {
+    // transform: translateY(-6.875rem);
+    transform: translateY(-140px);
   }
 
   &__items {
@@ -12,6 +17,24 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @include breakpoint-up(medium) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .followers__gridItem {
+        margin: 10px;
+      }
+    }
+
+    @include breakpoint-up(desktop) {
+      justify-content: space-between;
+
+      .followers__gridItem {
+        margin: 0;
+      }
+    }
   }
 
   &__topBorder {
@@ -23,14 +46,13 @@
   }
 
   &__gridItem {
-    flex: 1 auto;
     padding: .625rem;
-    min-width: 15.9375rem;
     overflow: hidden;
     height: 13.4375rem;
     position: relative;
     border-radius: .3125rem;
     background-color: $veryPaleBlue;
+    // flex: 0 255px;
 
     display: flex;
     align-items: center;
@@ -53,9 +75,20 @@
 
 
     @include breakpoint-down(medium) {
+      min-width: 100%;
       &:not(:first-child) {
         margin-top: 1.25rem;
       }
+    }
+
+    @include breakpoint-up(medium) {
+      margin-top: 20px;
+      flex: 0 calc(256px - 10px);
+    }
+
+    @include breakpoint-up(desktop) {
+      // margin-top: 10px;
+      flex: 0 calc(256px - 30px);
     }
   }
 
