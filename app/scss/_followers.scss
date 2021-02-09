@@ -4,12 +4,12 @@
   transform: translateY(-4.6875rem);
 
   @include breakpoint-up(mobile) {
-    transform: translateY(-110px);
+    transform: translateY(-6.875rem);
   }
 
   @include breakpoint-up(medium) {
     // transform: translateY(-6.875rem);
-    transform: translateY(-140px);
+    transform: translateY(-8.75rem);
   }
 
   &__items {
@@ -24,7 +24,7 @@
       justify-content: space-evenly;
 
       .followers__gridItem {
-        margin: 10px;
+        margin: .625rem;
       }
     }
 
@@ -52,7 +52,6 @@
     position: relative;
     border-radius: .3125rem;
     background-color: $veryPaleBlue;
-    // flex: 0 255px;
 
     display: flex;
     align-items: center;
@@ -76,19 +75,19 @@
 
     @include breakpoint-down(medium) {
       min-width: 100%;
+
       &:not(:first-child) {
         margin-top: 1.25rem;
       }
     }
 
     @include breakpoint-up(medium) {
-      margin-top: 20px;
-      flex: 0 calc(256px - 10px);
+      margin-top: 1.25rem;
+      flex: 0 calc(16rem - .625rem);
     }
 
     @include breakpoint-up(desktop) {
-      // margin-top: 10px;
-      flex: 0 calc(256px - 30px);
+      flex: 0 calc(16rem - 1.875rem);
     }
   }
 
@@ -127,21 +126,21 @@
 
   &__grow {
     display: block;
-    font-size: 12px;
+    font-size: .75rem;
     font-weight: 700;
     position: relative;
-    padding: 5px 10px;
+    padding: .3125rem .625rem;
 
     &::before {
       content: '';
       top: 0px;
       left: 0px;
-      width: 10px;
-      height: 10px;
+      width: .625rem;
+      height: .625rem;
       display: inline-block;
       background-size: 100%;
       background-position: center;
-      transform: translateX(-5px);
+      transform: translateX(-.3125rem);
       background-repeat: no-repeat;
     }
 
@@ -177,6 +176,10 @@ body.dark {
 
     &__counter {
       color: $white;
+    }
+
+    &__text {
+      color: $desaturatedBlue;
     }
   }
 }
