@@ -46,17 +46,25 @@
   }
 
   &__gridItem {
+    cursor: pointer;
     padding: .625rem;
     overflow: hidden;
     height: 13.4375rem;
     position: relative;
     border-radius: .3125rem;
-    background-color: $veryPaleBlue;
+    transition: all .2s ease-in-out;
+    background-color: $lightGrayishBlue;
 
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+
+    box-shadow: 0 1px 10px $lightGrayishBlue;
+
+    &:hover {
+      filter: brightness(95%);
+    }
 
     @each $rede in map-keys($webs) {
       $colourMap: map-get($webs, $rede);
@@ -140,23 +148,21 @@
       display: inline-block;
       background-size: 100%;
       background-position: center;
-      transform: translateX(-.3125rem);
       background-repeat: no-repeat;
+      transform: translateX(-.3125rem);
     }
 
-    &.decreased {
-      color: $brightRed;
+    $beforeItens: ( 'grownUp': ($limeGreen, 'up'), 'decreased': ($brightRed, 'down') );
 
-      &::before {
-        background-image: url('../../images/icon-down.svg');
-      }
-    }
+    @each $className in map-keys($beforeItens) {
+      $values: map-get($beforeItens, $className);
 
-    &.grownUp {
-      color: $limeGreen;
-
-      &::before {
-        background-image: url('../../images/icon-up.svg');
+      &.#{$className} {
+        color: nth($values, 1);
+            
+        &::before {
+          background-image: url('../../images/icon-#{nth($values, 2)}.svg');
+        }
       }
     }
   }
@@ -168,6 +174,11 @@ body.dark {
   .followers {
     &__gridItem {
       background-color: #252b43;
+      box-shadow: 0 1px 10px $veryDarkBlue;
+
+      &:hover {
+        filter: brightness(110%);
+      }
     }
 
     &__author span {

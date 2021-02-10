@@ -338,12 +338,15 @@ body.dark .header__toggle__input::before {
 }
 
 .followers__gridItem {
+  cursor: pointer;
   padding: .625rem;
   overflow: hidden;
   height: 13.4375rem;
   position: relative;
   border-radius: .3125rem;
-  background-color: #f5f7ff;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  background-color: #f0f2fa;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -357,6 +360,13 @@ body.dark .header__toggle__input::before {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-shadow: 0 1px 10px #f0f2fa;
+          box-shadow: 0 1px 10px #f0f2fa;
+}
+
+.followers__gridItem:hover {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
 }
 
 .followers__gridItem.youtube .followers__topBorder {
@@ -451,17 +461,9 @@ body.dark .header__toggle__input::before {
   display: inline-block;
   background-size: 100%;
   background-position: center;
+  background-repeat: no-repeat;
   -webkit-transform: translateX(-0.3125rem);
           transform: translateX(-0.3125rem);
-  background-repeat: no-repeat;
-}
-
-.followers__grow.decreased {
-  color: #dc414c;
-}
-
-.followers__grow.decreased::before {
-  background-image: url("../../images/icon-down.svg");
 }
 
 .followers__grow.grownUp {
@@ -472,8 +474,23 @@ body.dark .header__toggle__input::before {
   background-image: url("../../images/icon-up.svg");
 }
 
+.followers__grow.decreased {
+  color: #dc414c;
+}
+
+.followers__grow.decreased::before {
+  background-image: url("../../images/icon-down.svg");
+}
+
 body.dark .followers__gridItem {
   background-color: #252b43;
+  -webkit-box-shadow: 0 1px 10px #1e202a;
+          box-shadow: 0 1px 10px #1e202a;
+}
+
+body.dark .followers__gridItem:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
 }
 
 body.dark .followers__author span {
@@ -486,5 +503,20 @@ body.dark .followers__counter {
 
 body.dark .followers__text {
   color: #8b97c6;
+}
+
+.overview {
+  background-color: red;
+}
+
+.overview__title {
+  font-weight: 700;
+}
+
+@media (max-width: 39.9375rem) {
+  .overview__title {
+    font-size: 1.125rem;
+    max-width: 16.25rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

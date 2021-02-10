@@ -1,0 +1,17 @@
+
+.overview {
+  background-color: red;
+
+  &__items {
+  }
+
+  &__title {
+    // font-size: 20px;
+    font-weight: 700;
+
+    @include breakpoint-down(medium) {
+      font-size: 1.125rem;
+      max-width: 16.25rem;
+    }
+  }
+}
