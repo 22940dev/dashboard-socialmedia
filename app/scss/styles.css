@@ -536,6 +536,22 @@ body.dark .followers__text {
       grid-template-columns: minmax(14.0625rem, 1fr);
 }
 
+@media (min-width: 40rem) {
+  .overview__grid {
+    grid-gap: .9375rem .9375rem;
+    -ms-grid-columns: (minmax(14.0625rem, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(14.0625rem, 1fr));
+  }
+}
+
+@media (min-width: 90rem) {
+  .overview__grid {
+    grid-gap: .9375rem .9375rem;
+    -ms-grid-columns: (minmax(14.0625rem, 1fr))[4];
+        grid-template-columns: repeat(4, minmax(14.0625rem, 1fr));
+  }
+}
+
 .overview__item {
   cursor: pointer;
   overflow: hidden;

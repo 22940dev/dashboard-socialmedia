@@ -21,6 +21,17 @@
     display: grid;
     grid-gap: .9375rem 0;
     grid-template-columns: minmax(14.0625rem, 1fr);
+
+    
+    @include breakpoint-up(medium) {
+      grid-gap: .9375rem .9375rem;
+      grid-template-columns: repeat(2, minmax(14.0625rem, 1fr));
+    }
+
+    @include breakpoint-up(desktop) {
+      grid-gap: .9375rem .9375rem;
+      grid-template-columns: repeat(4, minmax(14.0625rem, 1fr));
+    }
   }
 
   &__item {
