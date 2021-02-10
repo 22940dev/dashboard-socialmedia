@@ -10,4 +10,5 @@
     document.body.classList.toggle('dark', e.target.checked);
   }, false);
 
+  document.body.classList.toggle('dark', toggleBox.checked);
 })();
