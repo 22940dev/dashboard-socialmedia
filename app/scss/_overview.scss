@@ -24,12 +24,12 @@
 
     
     @include breakpoint-up(medium) {
-      grid-gap: .9375rem .9375rem;
+      grid-gap: 1.5625rem;
       grid-template-columns: repeat(2, minmax(14.0625rem, 1fr));
     }
 
     @include breakpoint-up(desktop) {
-      grid-gap: .9375rem .9375rem;
+      grid-gap: 1.25rem 1.5625rem;
       grid-template-columns: repeat(4, minmax(14.0625rem, 1fr));
     }
   }

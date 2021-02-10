@@ -314,9 +314,6 @@ body.dark .header__toggle__input::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -328,29 +325,20 @@ body.dark .header__toggle__input::before {
 
 @media (min-width: 40rem) {
   .followers__items {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  .followers__items .followers__gridItem {
-    margin: .625rem;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 1.5625rem;
+    -ms-grid-columns: (minmax(14.0625rem, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(14.0625rem, 1fr));
   }
 }
 
 @media (min-width: 90rem) {
   .followers__items {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .followers__items .followers__gridItem {
-    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(14.0625rem, 1fr))[4];
+        grid-template-columns: repeat(4, minmax(14.0625rem, 1fr));
   }
 }
 
@@ -422,7 +410,6 @@ body.dark .header__toggle__input::before {
 
 @media (min-width: 40rem) {
   .followers__gridItem {
-    margin-top: 1.25rem;
     -webkit-box-flex: 0;
         -ms-flex: 0 calc(16rem - .625rem);
             flex: 0 calc(16rem - .625rem);
@@ -538,7 +525,7 @@ body.dark .followers__text {
 
 @media (min-width: 40rem) {
   .overview__grid {
-    grid-gap: .9375rem .9375rem;
+    grid-gap: 1.5625rem;
     -ms-grid-columns: (minmax(14.0625rem, 1fr))[2];
         grid-template-columns: repeat(2, minmax(14.0625rem, 1fr));
   }
@@ -546,7 +533,7 @@ body.dark .followers__text {
 
 @media (min-width: 90rem) {
   .overview__grid {
-    grid-gap: .9375rem .9375rem;
+    grid-gap: 1.25rem 1.5625rem;
     -ms-grid-columns: (minmax(14.0625rem, 1fr))[4];
         grid-template-columns: repeat(4, minmax(14.0625rem, 1fr));
   }
